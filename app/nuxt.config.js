@@ -47,7 +47,8 @@ const nuxtConfig = {
 	},
 
 	eslint: {
-		lintOnStart: false
+		lintOnStart: false,
+		fix: true,
 	},
 
 	css: [

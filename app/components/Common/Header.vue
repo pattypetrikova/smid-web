@@ -2,8 +2,10 @@
 	<header class="header">
 		<div class="header__row row">
 			<div class="column">
-				<nuxt-link :to="$routes.path('page.index')" class="header__logo">
-					<svg-logo />
+				<nuxt-link :to="$routes.path('page.index')" class="header__name">
+					<span class="header__name">
+						DAVID SMID
+					</span>
 				</nuxt-link>
 			</div>
 
@@ -22,15 +24,18 @@
 							:to="$routes.path('page.index')"
 							class="header__nav-item"
 						>
-							Home
+							Advokátní Služby
 						</nuxt-link>
 
 						<nuxt-link
 							:to="$routes.path('page.contact')"
 							class="header__nav-item"
 						>
-							Contact
+							Adresa
 						</nuxt-link>
+						<partials-button to="#services" type="primary">
+							kontakt
+						</partials-button>
 					</nav>
 				</transition>
 			</div>
@@ -40,8 +45,6 @@
 
 <script setup>
 	const {device, togglePageScrolling} = useWebpage();
-
-	const SvgLogo = defineAsyncComponent(() => import('~/assets/svg/logo.svg'));
 
 	const isMobileMenuOpen = ref(false);
 	const isWithMobileNavigation = computed(() => !device.isTablet && !device.isDesktop);
@@ -67,17 +70,20 @@
 		top: 0;
 		z-index: $zindex-header;
 		margin: 0;
-		background: $color-black;
+		color: $color-white;
+		background-color: rgba(0 0 0 / 35%);
+		box-shadow: rgba(50 50 93 / 25%) rem(0) rem(10) rem(30) rem(-20), rgba(0 0 0 / 5%) rem(0) rem(30) rem(60) rem(-30);
 
 		&__row {
 			align-items: center;
 			height: $height-header;
 		}
 
-		&__logo {
-			display: block;
-			width: rem(120);
-			height: rem(26);
+		&__name {
+			@include typo(d3);
+
+			text-decoration: none;
+			text-underline: none;
 		}
 
 		&__hamburger {
@@ -101,7 +107,7 @@
 				display: block;
 				width: 100%;
 				height: 2px;
-				background: $color-white;
+				background: $color-black;
 				transition: $transition-default;
 			}
 
@@ -148,7 +154,6 @@
 			padding: spacer(lg) spacer(lg) spacer(xxl);
 			margin: 0;
 			color: $color-white;
-			background: $color-black;
 
 			@include breakpoint(sm up) {
 				display: flex !important; // !important is needed to override v-show

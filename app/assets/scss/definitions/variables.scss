@@ -2,18 +2,19 @@
 $color-white: #ffffff;
 $color-black: #000000;
 $color-grey: #666666;
-$color-green: #41b883;
+$color-green: #C7C880;
 
 // borders
 $border-radius-default: 2px;
 
 // typo (specific typo combination like headings or bodycopy define in `typo.scss`)
+$font-weight-extralight: 200;
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 $font-weight-black: 900;
-$font-family-bodycopy: helvetica, arial, sans-serif;
-$font-family-heading: helvetica, arial, sans-serif;
+$font-family-bodycopy: 'Courier Prime', arial, sans-serif;
+$font-family-heading: 'Roboto', arial, sans-serif;
 $font-size-base: 16;
 
 // vertical rhythm; use `spacer(lg);` custom scss function
@@ -30,7 +31,7 @@ $vertical-rhythm-spacers: (
 
 // dimensions
 $width-row: rem(1200);
-$height-header: rem(70);
+$height-header: rem(80);
 
 // transitions
 $transition-duration-default: 0.3s;

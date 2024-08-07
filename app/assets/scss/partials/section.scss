@@ -7,8 +7,20 @@
 		margin-bottom: spacer(xl);
 	}
 
+	&--bg {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: spacer(lg);
+		padding-bottom: spacer(lg);
+
+		@include breakpoint (md up) {
+			padding-top: spacer(xl);
+			padding-bottom: spacer(xl);
+		}
+	}
+
 	&__title {
-		@include typo(d1);
+		@include typo(d2);
 
 		&--small {
 			@include typo(d2);

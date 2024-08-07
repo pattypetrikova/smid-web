@@ -1,43 +1,17 @@
 // if using custom fonts, use this file
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 
-/*
+
 @font-face {
-	font-weight: 300;
-	font-family: 'Example';
+	font-family: "Julius Sans One", sans-serif;
+	font-weight: 400;
 	font-style: normal;
-	src: url('~/assets/fonts/example/font-300.eot?#iefix') format('eot'),
-		url('~assets/fonts/example/font-300.woff2') format('woff2'),
-		url('~assets/fonts/example/font-300.woff') format('woff'),
-		url('~assets/fonts/example/font-300.ttf') format('truetype');
-}
-
-@font-face {
-	font-weight: 300;
-	font-family: 'Example';
-	font-style: italic;
-	src: url('~/assets/fonts/example/font-300-italic.eot?#iefix') format('eot'),
-		url('~assets/fonts/example/font-300-italic.woff2') format('woff2'),
-		url('~assets/fonts/example/font-300-italic.woff') format('woff'),
-		url('~assets/fonts/example/font-300-italic.ttf') format('truetype');
 }
 
 @font-face {
 	font-weight: 400;
-	font-family: 'Example';
+	font-family: 'Roboto';
 	font-style: normal;
-	src: url('~/assets/fonts/example/font-400.eot?#iefix') format('eot'),
-		url('~assets/fonts/example/font-400.woff2') format('woff2'),
-		url('~assets/fonts/example/font-400.woff') format('woff'),
-		url('~assets/fonts/example/font-400.ttf') format('truetype');
+	src: url('../fonts/Roboto-Regular.ttf') format('ttf')
 }
-
-@font-face {
-	font-weight: 400;
-	font-family: 'Example';
-	font-style: italic;
-	src: url('~/assets/fonts/example/font-400-italic.eot?#iefix') format('eot'),
-		url('~assets/fonts/example/font-400-italic.woff2') format('woff2'),
-		url('~assets/fonts/example/font-400-italic.woff') format('woff'),
-		url('~assets/fonts/example/font-400-italic.ttf') format('truetype');
-}
-*/

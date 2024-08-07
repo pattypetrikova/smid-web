@@ -151,12 +151,12 @@
 		&__picture {
 			position: relative;
 			display: inline-block;
+			min-height: min-content;
 			overflow: hidden;
 
 			img {
 				display: block;
-				width: min-content;
-				height: 100%;
+				width: 100%;
 				background-size: cover;
 			}
 		}
