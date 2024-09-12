@@ -1,22 +1,24 @@
 <template>
-	<div id="services" class="services section--bg">
+	<div id="contact" class="contact section--bg">
 		<div class="row">
 			<div class="contact__column column">
 				<h2 class="section__title">
 					Kontakt
 				</h2>
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="contact__column" />
-			<div class="contact__column">
-				<div class="section__perex section__perex--small">
-					<p>
-						Neváhejte a kontaktujte nás! <br />
-						+420 775 143 332 <br />
-						+420 604 958 832 <br />
-						info@cikr.cz
+			<div class="contact__column column ">
+				<div class="section__perex section__perex">
+					<h2 class="contact__name ">
+						JUDr. David Šmíd, advokát
+					</h2>
+					<p v-aos="['animate__fadeIn']" data-aos-delay="0.3s" data-aos-duration=".5s">
+						telefoní číslo: +420 775 143 332 <br />
+					</p>
+					<p v-aos="['animate__fadeIn']" data-aos-delay="0.3s" data-aos-duration=".5s">
+						IČ: 07295413 DIČ: CZ07295413 <br />
+					</p>
+					<p v-aos="['animate__fadeIn']" data-aos-delay="0.3s" data-aos-duration=".5s">
+						email: info@cikr.cz
 					</p>
 				</div>
 			</div>
@@ -32,24 +34,22 @@
 
 <style scoped lang="scss">
 
-	.services {
+	.contact {
 		color: white;
-		width: 100vw;
-		height: rem(700);
+		width: calc(100vw);
+		height: rem(400);
 		overflow: hidden;
 		background: url('/images/contact.jpg');
 		background-size: cover;
 		position: relative;
 
-		// &::after {
-		//	 position: absolute;
-		//	 display: block;
-		//	 width: 100%;
-		//	 height: rem(350);
-		//	 content: '';
-		//	 bottom: 0;
-		//	 background: linear-gradient(0deg, rgba(0 0 0 / 100%) 0%, rgba(0 0 0 / 0%) 100%);
-		// }
+		@include breakpoint(sm up) {
+			width: calc(100vw - 17px);
+		}
+
+		@include breakpoint(md up) {
+			height: rem(500);
+		}
 
 		&__column {
 			@include flex-column(12);
@@ -57,6 +57,10 @@
 			@include breakpoint(md up) {
 				@include flex-column(6);
 			}
+		}
+
+		&__name {
+			@include typo(d3)
 		}
 
 		&__subtitle {

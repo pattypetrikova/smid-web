@@ -1,8 +1,8 @@
 <template>
 	<div class="services section--bg">
 		<div class="row">
-			<div class="column">
-				<h2 class="section__title">
+			<div class="column services__wrap">
+				<h2 class="section__title services__title">
 					advokátní služby
 				</h2>
 			</div>
@@ -10,40 +10,37 @@
 
 		<div class="row">
 			<div class="services__column">
-				<div class="section__perex section__perex--small">
+				<div v-aos="['animate__fadeIn']" class="services__perex" data-aos-delay="0.3s" data-aos-duration="1s">
 					<svg-icon class="services__icon" />
 					<h3 class="services__subtitle">
-						Trestní právo a přestupky
+						Trestní právo
 					</h3>
-					<p>
-						Our webpage composable gives you a reactive way to detect device type.Our webpage composable gives you a reactive way to
-						detect device type. Our webpage composable gives you a reactive way to detect device type.
+					<p class="services__description">
+						Our webpage composable gives you a reactive way to detect device type.
 					</p>
 				</div>
 			</div>
 
 			<div class="services__column">
-				<div class="section__perex section__perex--small">
+				<div v-aos="['animate__fadeIn']" class="services__perex" data-aos-delay="0.6s" data-aos-duration="1s">
 					<svg-icon class="services__icon" />
 					<h3 class="services__subtitle">
 						Smlouvy
 					</h3>
-					<p>
-						Our webpage composable gives you a reactive way to detect device type.Our webpage composable gives you a reactive way to
-						detect device type. Our webpage composable gives you a reactive way to detect device type.
+					<p class="services__description">
+						Our webpage composable gives you a reactive way to detect device type.
 					</p>
 				</div>
 			</div>
 
 			<div class="services__column">
-				<div class="section__perex section__perex--small">
+				<div v-aos="['animate__fadeIn']" class="services__perex" data-aos-delay="0.9s" data-aos-duration="1s">
 					<svg-icon class="services__icon" />
 					<h3 class="services__subtitle">
 						Dědické právo
 					</h3>
-					<p>
-						Our webpage composable gives you a reactive way to detect device type.Our webpage composable gives you a reactive way to
-						detect device type. Our webpage composable gives you a reactive way to detect device type.
+					<p class="services__description">
+						Our webpage composable gives you a reactive way to detect device type.Our webpage composable gives you a reactive
 					</p>
 				</div>
 			</div>
@@ -60,8 +57,7 @@
 
 	.services {
 		color: white;
-		width: 100vw;
-		height: rem(700);
+		width: calc(100vw);
 		overflow: hidden;
 		background: url('/images/services.jpg');
 		background-size: cover;
@@ -77,24 +73,56 @@
 			background: linear-gradient(0deg, rgba(0 0 0 / 100%) 0%, rgba(0 0 0 / 0%) 100%);
 		}
 
+		@include breakpoint(sm up) {
+			width: calc(100vw - 17px);
+		}
+
 		&__column {
 			@include flex-column(12);
 
-			@include breakpoint(md up) {
+			justify-content: center;
+
+			@include breakpoint(sm up) {
 				@include flex-column(6);
 			}
 
 			@include breakpoint(lg up) {
 				@include flex-column(4);
 			}
+
+			z-index: 50;
+		}
+
+		&__description {
+			margin-top: 0;
+
+			@include breakpoint(md up) {
+				margin-top: rem(10);
+			}
+		}
+
+		&__perex {
+			max-width: rem(300);
+			margin: auto ;
+		}
+
+		&__wrap {
+			display: flex;
+			justify-content: center;
+		}
+
+		&__title {
+			max-width: fit-content;
 		}
 
 		&__subtitle {
-			@include typo(d3)
+			@include typo(d3);
 		}
 
 		&__icon {
 			max-width: rem(50);
+			margin-bottom: rem(20);
+			margin-top: rem(83);
 		}
 	}
 

@@ -28,7 +28,8 @@ const nuxtConfig = {
 		'@nuxt/image',
 		'@nuxtjs/device',
 		'@nuxtjs/seo',
-		'@vueuse/nuxt'
+		'@vueuse/nuxt',
+		'nuxt3-aos'
 	],
 
 	site: {

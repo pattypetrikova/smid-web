@@ -4,10 +4,10 @@
 			<div class="intro__wrap">
 				<div class="intro__bg" />
 				<div class="intro__title-wrap">
-					<p class="intro__subtitle">
+					<p v-aos="['animate__fadeInUp']" class="intro__subtitle" data-aos-delay="0.5s" data-aos-duration="1s">
 						Advokátní kancelář
 					</p>
-					<h1 class="intro__title">
+					<h1 v-aos="['animate__fadeInUp']" class="intro__title" data-aos-delay="0.5s" data-aos-duration="1s">
 						DAVID ŠMÍD
 					</h1>
 				</div>
@@ -23,7 +23,7 @@
 
 .intro {
 	position: relative;
-	height: rem(700);
+	height: rem(650);
 
 	&__inner {
 		position: relative;
@@ -38,16 +38,24 @@
 
 		text-align: center;
 		font-weight: 300;
-		font-size: rem(24);
+		font-size: rem(18);
 		margin-bottom: rem(20);
+
+		@include breakpoint(md up) {
+			font-size: rem(24);
+		}
 	}
 
 	&__bg {
-		width: 100vw;
+		width: calc(100vw);
 		height: rem(700);
 		overflow: hidden;
 		background: url('/images/intro-desktop.jpg');
 		background-size: cover;
+
+		@include breakpoint(sm up) {
+			width: calc(100vw - 17px);
+		}
 	}
 
 	&__wrap {
@@ -73,6 +81,8 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: $color-white;
+		width: 70%;
+		text-align: center;
 	}
 }
 

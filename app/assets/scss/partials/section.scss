@@ -7,15 +7,20 @@
 		margin-bottom: spacer(xl);
 	}
 
+	@include breakpoint (lg up) {
+		margin-top: rem(100);
+		margin-bottom:  rem(100);
+	}
+
 	&--bg {
 		margin-top: 0;
 		margin-bottom: 0;
-		padding-top: spacer(lg);
-		padding-bottom: spacer(lg);
+		padding-top: spacer(xl);
+		padding-bottom: spacer(xl);
 
 		@include breakpoint (md up) {
-			padding-top: spacer(xl);
-			padding-bottom: spacer(xl);
+			padding-top: rem(120);
+			padding-bottom: rem(120);
 		}
 	}
 
@@ -37,6 +42,12 @@
 			@include typo(b2);
 
 			margin-top: spacer(md);
+		}
+
+		&--large {
+			@include breakpoint(lg up) {
+				font-size: rem(24);
+			}
 		}
 	}
 }

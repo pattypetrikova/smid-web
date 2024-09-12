@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" :class="{ 'header__scrolled': isScrolled }">
 		<div class="header__row row">
 			<div class="column">
 				<nuxt-link :to="$routes.path('page.index')" class="header__name">
@@ -47,7 +47,22 @@
 	const {device, togglePageScrolling} = useWebpage();
 
 	const isMobileMenuOpen = ref(false);
+	const isScrolled = ref(false);
 	const isWithMobileNavigation = computed(() => !device.isTablet && !device.isDesktop);
+
+	const handleScroll = () => {
+		isScrolled.value = window.scrollY > 130; // Přizpůsobte podle potřeby
+	};
+
+	console.log(isScrolled);
+
+	onMounted(() => {
+		window.addEventListener('scroll', handleScroll);
+	});
+
+	onUnmounted(() => {
+		window.removeEventListener('scroll', handleScroll);
+	});
 
 	const toggleMenu = () => {
 		if (isWithMobileNavigation.value) {
@@ -71,8 +86,12 @@
 		z-index: $zindex-header;
 		margin: 0;
 		color: $color-white;
-		background-color: rgba(0 0 0 / 35%);
-		box-shadow: rgba(50 50 93 / 25%) rem(0) rem(10) rem(30) rem(-20), rgba(0 0 0 / 5%) rem(0) rem(30) rem(60) rem(-30);
+		transition: 0.4s;
+
+		&__scrolled {
+			background-color: rgba(0 0 0 / 80%);
+			box-shadow: rgba(50 50 93 / 25%) rem(0) rem(10) rem(30) rem(-20), rgba(0 0 0 / 5%) rem(0) rem(30) rem(60) rem(-30);
+		}
 
 		&__row {
 			align-items: center;
@@ -82,8 +101,13 @@
 		&__name {
 			@include typo(d3);
 
+			font-size: rem(26);
 			text-decoration: none;
 			text-underline: none;
+
+			@include breakpoint(md up) {
+				font-size: rem(26);
+			}
 		}
 
 		&__hamburger {
@@ -95,6 +119,7 @@
 			cursor: pointer;
 			background: none;
 			border: 0;
+			z-index: 1000;
 
 			@include breakpoint(sm up) {
 				display: none;
@@ -107,7 +132,7 @@
 				display: block;
 				width: 100%;
 				height: 2px;
-				background: $color-black;
+				background: $color-white;
 				transition: $transition-default;
 			}
 
@@ -144,7 +169,7 @@
 		}
 
 		&__nav {
-			@include position(fixed, $height-header 0 0);
+			@include position(fixed, 0 0 0);
 
 			display: flex;
 			flex-direction: column;
@@ -154,6 +179,7 @@
 			padding: spacer(lg) spacer(lg) spacer(xxl);
 			margin: 0;
 			color: $color-white;
+			background-color: rgba(0 0 0 / 80% );
 
 			@include breakpoint(sm up) {
 				display: flex !important; // !important is needed to override v-show

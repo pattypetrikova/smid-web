@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="footer__column column">
-				&copy; Dentsu
+				&copy; 2024. Všechna práva vyhrazena.
 			</div>
 		</div>
 	</footer>

@@ -150,7 +150,6 @@
 
 		&__picture {
 			position: relative;
-			display: inline-block;
 			min-height: min-content;
 			overflow: hidden;
 
